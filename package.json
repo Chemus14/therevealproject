@@ -1,0 +1,19 @@
+{
+  "name": "therevealproject",
+  "version": "1.0.0",
+  "description": "Web to show the countdown for the reveal gender",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Chemus14/therevealproject.git"
+  },
+  "author": "jose jimenez",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Chemus14/therevealproject/issues"
+  },
+  "homepage": "https://github.com/Chemus14/therevealproject#readme"
+}

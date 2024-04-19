@@ -1,0 +1,223 @@
+
+:root {
+/* CSS HEX */
+--sky-blue: #72C9E7ff;
+--yinmn-blue: #214F90ff;
+--pale-purple: #E8D2E5ff;
+--russian-violet: #28163Eff;
+--quinacridone-magenta: #823561ff;
+}
+*, 
+*:after,
+*:before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+}
+body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-purple); }
+  .container {
+    display: flex;
+    justify-content: center;
+    max-width: 1024px;
+    min-height: 500px;
+    margin: auto;
+    background-image: url('../images/backfocus.jpeg'); /* Reemplaza 'tu-imagen.jpg' con la ruta de tu imagen */
+    background-size: cover;
+    background-position: center;
+    padding: 20px;
+    position: relative;
+  }
+  .img-girl{
+    position:absolute;
+    right: -250px;
+    width: 340px;
+    animation:  changePositionGirl 8s;
+    top: 20px;
+  }
+
+  @keyframes changePositionGirl{
+    0% { right: -250px; }
+    50% { right: 125px; width: 193px; top:120px }
+    100% { right: -250px }
+  }
+
+  .img-boy{
+    position:absolute;
+    left: -250px;
+    width: 340px;
+    top: 0px;
+    animation:  changePositionBoy 8s;
+  }
+
+  @keyframes changePositionBoy{
+    0% { left: -250px; }
+    50% { left: 125px; width: 193px; top:110px }
+    100% { left: -250px }
+  }
+  .content{
+    margin-top: 50px;
+    animation: changeOpacity 12s;
+  }
+
+  @keyframes changeOpacity {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  .countdown { /* Estilos para tu cuenta atrás */
+    text-align: center;
+    margin-bottom: 20px;
+    border: 5px double var(--russian-violet);
+    width: 400px;
+  }
+  /* Estilos para el modal */
+.modal {
+    display: none; /* Ocultar el modal por defecto */
+    position: fixed; /* Posición fija para que esté superpuesto al contenido */
+    z-index: 1; /* Situar el modal por encima del resto del contenido */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.4); /* Fondo oscuro semitransparente */
+  }
+
+  .modalbutton { /* Estilos para el botón que abrirá el modal */
+    display: block;
+    width: 200px;
+    margin: 50px auto;
+    padding: 10px;
+    text-align: center;
+    background-color: var(--sky-blue);
+    color: white;
+    border: 2px solid white;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bolder;
+    font-size: 15px;
+    transition: all 0.4s ease;
+  }
+  .modalbutton:hover{
+    background-color: var(--pale-purple);
+    color: var(--quinacridone-magenta);
+  }
+  
+  /* Estilos para el contenido del modal */
+  .modal-content {
+    background-color: rgba(255,255,255,0.7);
+    margin: 0 auto; /* Centrar verticalmente */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 100%; /* Anchura del modal */
+    border: 3px solid #aaa;
+    border-radius: 12px;
+    overflow: scroll;
+  }
+
+  .info-party{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 80%;
+    margin: 0 auto;
+  }
+  .info-party p{
+    color: var(--yinmn-blue);
+    font-size: 20px;
+  }
+  .info-party p>span{
+    color: var(--russian-violet);
+    font-weight: bolder;
+  }
+  
+  /* Estilos para el botón de cierre (x) */
+  .close {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .survey { /* Estilos para tu encuesta */
+    text-align: center;
+  }
+  .survey h1{
+    margin-bottom: 20px;
+    color: white;
+  }
+  .btn-gender-boy{
+    background-color: var(--yinmn-blue);
+    color: white;
+    font-size: 23px;
+    border: 3px solid white;
+    border-radius: 12px;
+    padding: 2px 15px;
+    cursor: pointer;
+  }
+  .btn-gender-girl{
+    background-color: var(--quinacridone-magenta);
+    color: white;
+    font-size: 23px;
+    border: 3px solid white;
+    border-radius: 12px;
+    padding: 2px 15px;
+    cursor: pointer;
+    margin-left: 100px;
+  }
+
+  .numero{
+    display: inline-block;
+    display: 50px;
+    color: white;
+    font-size: 50px;
+    font-weight: bolder;
+  }
+
+  /* Estilos para la lista desordenada principal */
+ul {
+    list-style: none; /* Eliminar los puntos de viñeta */
+    padding-left: 0; /* Eliminar el espacio de relleno predeterminado */
+    margin-left: 5px;
+  }
+  
+  /* Estilos para los elementos de lista */
+  li {
+    margin-bottom: 10px; /* Espacio entre elementos de lista */
+  }
+  
+  /* Estilos para las sublistas */
+  ul ul {
+    margin-top: 5px; /* Espacio entre sublistas */
+  }
+  
+  /* Estilos para los elementos de lista de las sublistas */
+  ul ul li {
+    margin-left: 20px; /* Indentación de la sublista */
+    color: var(--quinacridone-magenta);
+  }
+  
+  /* Estilos para los spans dentro de los elementos de lista */
+  li span {
+    font-weight: bold; /* Hacer el texto en negrita */
+  }
+  
+  /* Estilos adicionales para mejorar la apariencia */
+  ul, li {
+    font-family: Arial, sans-serif; /* Tipo de fuente */
+    font-size: 16px; /* Tamaño de fuente */
+    color: var(--yinmn-blue); /* Color de texto */
+    font-weight: bolder;
+  }
+  
+  @media (max-width: 1024px) {
+    .container { width: 100%; 
+        height: 100%; }
+  }
