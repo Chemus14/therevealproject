@@ -31,30 +31,30 @@ body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-p
   }
   .img-girl{
     position:absolute;
-    right: -250px;
-    width: 340px;
+    right: 6px;
+    width: 244px;
     animation:  changePositionGirl 8s;
-    top: 20px;
+    top: 215px;
   }
 
   @keyframes changePositionGirl{
-    0% { right: -250px; }
-    50% { right: 125px; width: 193px; top:120px }
-    100% { right: -250px }
+    0% { right: 6px; }
+    50% { right: 200px; }
+    100% { right: 6px }
   }
 
   .img-boy{
     position:absolute;
-    left: -250px;
-    width: 340px;
-    top: 0px;
+    left: 3px;
+    width: 244px;
+    top: 201px;
     animation:  changePositionBoy 8s;
   }
 
   @keyframes changePositionBoy{
-    0% { left: -250px; }
-    50% { left: 125px; width: 193px; top:110px }
-    100% { left: -250px }
+    0% { left: 3px; }
+    50% { left: 250px;}
+    100% { left: 3px }
   }
   .content{
     margin-top: 50px;
@@ -261,4 +261,63 @@ ul {
       font-size: 1.5em;
       margin-bottom: 170px;
     }
+}
+
+@media (max-width: 750px) {
+  /* Estilos para pantallas con un ancho máximo de 600px */
+  .container{
+    max-width: 100%;
+    min-height: 500px;
+    overflow: hidden;
+    margin: 0;
+  }
+  .modal-content{
+    width: 100%;
+  }
+  .img-girl{
+    width:120px;
+    right:-8px;
+    top: 120px
+  }
+
+  .img-boy{
+    width: 120px;
+    left: -1px;
+    top: 120px;
+  }
+
+  .countdown{
+    width: 220px;
+    margin-left: 23px
+  }
+
+  .numero{
+  font-size: 2rem;
+  }
+
+  .survey h1{
+    font-size: 1.4em;
+  }
+  .btn-gender-boy, .btn-gender-girl{
+    font-size: 0.8em;
+  }
+  .btn-gender-girl{
+    margin-left: 40px;
+  }
+  .modalbutton{
+    font-size: 1.5em;
+    margin-bottom: 170px;
+  }
+
+  @keyframes changePositionGirl{
+    0% { right: 6px; }
+    50% { right: 150px; }
+    100% { right: 6px }
+  }
+
+  @keyframes changePositionBoy{
+    0% { left: 3px; }
+    50% { left: 170px;}
+    100% { left: 3px }
+  }
 }
