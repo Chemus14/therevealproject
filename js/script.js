@@ -79,7 +79,7 @@ document.getElementById('btn-gender-girl').addEventListener('click', () => {
 
 // Función para enviar el voto al servidor
 function votar(opcion) {
-  fetch('/votar', {
+  fetch('http://127.0.0.1:3000/votar', {
     method: 'POST',
     headers: {
       'Content-Type': 'application/json'
@@ -87,6 +87,7 @@ function votar(opcion) {
     body: JSON.stringify({ opcion })
   })
     .then((response) => {
+      console.log(response)
       if (!response.ok) {
         throw new Error('Error al enviar el voto')
       }
@@ -97,3 +98,31 @@ function votar(opcion) {
       alert('Error al registrar el voto')
     })
 }
+
+// Define una función para obtener y mostrar el recuento de votos
+function obtenerRecuentoVotos() {
+  // Obtener el recuento de votos
+  fetch('http://127.0.0.1:3000/votos')
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Error al obtener el recuento de votos')
+      }
+      return response.json()
+    })
+    .then((data) => {
+      // Aquí puedes manejar la respuesta, por ejemplo, mostrando el recuento de votos en algún elemento del DOM
+      console.log('Recuento de votos:', data)
+      // Por ejemplo, si tienes un elemento con el id "votosCount", puedes actualizar su contenido
+      const votesCountElement = document.getElementById('votosCount')
+      if (votesCountElement) {
+        const totalVotes = data[0].count + data[1].count
+        votesCountElement.innerHTML = `<progress id="file" max="${totalVotes}" value="${data[0].count}"></progress>`
+      }
+    })
+    .catch((error) => {
+      console.error('Error al obtener el recuento de votos:', error)
+    })
+}
+
+// Llamar a la función cuando la página se carga
+window.addEventListener('load', obtenerRecuentoVotos)

@@ -67,7 +67,7 @@ body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-p
   }
   .countdown { /* Estilos para tu cuenta atrás */
     text-align: center;
-    margin-bottom: 20px;
+    margin-bottom: 90px;
     border: 5px double var(--russian-violet);
     width: 400px;
   }
@@ -95,6 +95,7 @@ body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-p
     font-weight: bolder;
     font-size: 1.5rem;
     transition: all 0.4s ease;
+    margin-bottom: 150px
   }
   .modalbutton:hover{
     background-color: var(--pale-purple);
@@ -214,7 +215,38 @@ ul {
     color: var(--yinmn-blue); /* Color de texto */
     font-weight: bolder;
   }
+
+  #votosCount{
+    margin-top: 30px;
+  }
   
+  /* Estilo base para el elemento <progress> */
+progress {
+  /* Establece el ancho del elemento */
+  width: 100%;
+  /* Establece la altura del elemento */
+  height: 30px; /* Puedes ajustar esta altura según sea necesario */
+  /* Establece el color del fondo detrás de la barra de progreso */
+  background-color: var(--pale-purple);
+  /* Redondea los bordes del elemento */
+  border-radius: 5px;
+}
+
+/* Estilo para la barra de progreso */
+progress::-webkit-progress-bar {
+  /* Establece el color de fondo de la barra de progreso */
+  background-color: var(--pale-purple);
+  /* Redondea los bordes de la barra de progreso */
+  border-radius: 5px;
+}
+
+/* Estilo para la barra de progreso en sí */
+progress::-webkit-progress-value {
+  /* Establece el color de la barra de progreso */
+  background-color: var(--sky-blue); /* Puedes ajustar este color según sea necesario */
+  /* Redondea los bordes de la barra de progreso */
+  border-radius: 5px;
+}
 
   @media (max-width: 600px) {
     /* Estilos para pantallas con un ancho máximo de 600px */
