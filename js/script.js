@@ -18,9 +18,21 @@ const x = setInterval(() => {
   const segundos = Math.floor((distancia % (1000 * 60)) / 1000)
 
   // Muestra el resultado en el elemento con id="countdown"
-  document.getElementById(
-    'countdown'
-  ).innerHTML = `<span class='numero'>${dias}</span> days <span class='numero'>${horas}</span> hours <span class='numero'>${minutos}</span> minutes<span class='numero'> ${segundos}</span> seconds` // Si la cuenta atrás termina, escribe algún texto
+  document.getElementById('countdown').innerHTML = `
+  <span class='numero'>
+  ${dias}
+  </span> 
+  d 
+  <span class='numero'>
+  ${horas}</span>
+   h 
+   <span class='numero'>
+   ${minutos}
+   </span> 
+   m
+   <span class='numero'> 
+   ${segundos}
+   </span> s` // Si la cuenta atrás termina, escribe algún texto
   if (distancia < 0) {
     clearInterval(x)
     document.getElementById('countdown').innerHTML = 'EXPIRADO'
@@ -54,3 +66,34 @@ window.addEventListener('click', function (event) {
     closeModal()
   }
 })
+
+// Manejar el clic en el botón "Boy"
+document.getElementById('btn-gender-boy').addEventListener('click', () => {
+  votar('Boy')
+})
+
+// Manejar el clic en el botón "Girl"
+document.getElementById('btn-gender-girl').addEventListener('click', () => {
+  votar('Girl')
+})
+
+// Función para enviar el voto al servidor
+function votar(opcion) {
+  fetch('/votar', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ opcion })
+  })
+    .then((response) => {
+      if (!response.ok) {
+        throw new Error('Error al enviar el voto')
+      }
+      alert('Voto registrado correctamente')
+    })
+    .catch((error) => {
+      console.error('Error:', error)
+      alert('Error al registrar el voto')
+    })
+}
