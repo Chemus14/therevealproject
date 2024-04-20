@@ -219,6 +219,12 @@ ul {
   #votosCount{
     margin-top: 30px;
   }
+  #votosCount h1{
+    font-size: 1.3em;
+    text-align: center;
+    color: white;
+    margin-bottom: 12px;
+  }
   
   /* Estilo base para el elemento <progress> */
 progress {
@@ -227,7 +233,7 @@ progress {
   /* Establece la altura del elemento */
   height: 30px; /* Puedes ajustar esta altura según sea necesario */
   /* Establece el color del fondo detrás de la barra de progreso */
-  background-color: var(--pale-purple);
+  background-color: lightpink;
   /* Redondea los bordes del elemento */
   border-radius: 5px;
 }
@@ -235,7 +241,7 @@ progress {
 /* Estilo para la barra de progreso */
 progress::-webkit-progress-bar {
   /* Establece el color de fondo de la barra de progreso */
-  background-color: var(--pale-purple);
+  background-color: lightpink;
   /* Redondea los bordes de la barra de progreso */
   border-radius: 5px;
 }
@@ -309,7 +315,7 @@ progress::-webkit-progress-value {
   .img-girl{
     width:120px;
     right:-8px;
-    top: 120px
+    top: 125px
   }
 
   .img-boy{
@@ -344,12 +350,70 @@ progress::-webkit-progress-value {
   @keyframes changePositionGirl{
     0% { right: 6px; }
     50% { right: 150px; }
-    100% { right: 6px }
+    100% { right: -8px }
   }
 
   @keyframes changePositionBoy{
     0% { left: 3px; }
     50% { left: 170px;}
-    100% { left: 3px }
+    100% { left: -1px }
+  }
+}
+
+@media (max-width: 400px) {
+  /* Estilos para pantallas con un ancho máximo de 600px */
+  .container{
+    max-width: 100%;
+    min-height: 500px;
+    overflow: hidden;
+    margin: 0;
+  }
+  .modal-content{
+    width: 100%;
+  }
+  .img-girl{
+    width:120px;
+    right:-8px;
+    top: 174px
+  }
+
+  .img-boy{
+    width: 120px;
+    left: -1px;
+    top: 169px;
+  }
+
+  @keyframes changePositionGirl{
+    0% { right: 6px; }
+    50% { right: 60px; }
+    100% { right: -8px }
+  }
+
+  @keyframes changePositionBoy{
+    0% { left: 3px; }
+    50% { left: 80px;}
+    100% { left: -1px }
+  }
+  .countdown{
+    width: 220px;
+    margin-left: 23px
+  }
+
+  .numero{
+  font-size: 2rem;
+  }
+
+  .survey h1{
+    font-size: 1em;
+  }
+  .btn-gender-boy, .btn-gender-girl{
+    font-size: 0.8em;
+  }
+  .btn-gender-girl{
+    margin-left: 40px;
+  }
+  .modalbutton{
+    font-size: 1em;
+    margin-bottom: 30px;
   }
 }

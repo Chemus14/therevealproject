@@ -77,6 +77,7 @@ document.getElementById('btn-gender-girl').addEventListener('click', () => {
   votar('Girl')
 })
 
+const surveyEl = document.getElementById('survey')
 // Función para enviar el voto al servidor
 function votar(opcion) {
   fetch('http://127.0.0.1:3000/votar', {
@@ -91,7 +92,8 @@ function votar(opcion) {
       if (!response.ok) {
         throw new Error('Error al enviar el voto')
       }
-      alert('Voto registrado correctamente')
+
+      obtenerRecuentoVotos()
     })
     .catch((error) => {
       console.error('Error:', error)
@@ -116,7 +118,7 @@ function obtenerRecuentoVotos() {
       const votesCountElement = document.getElementById('votosCount')
       if (votesCountElement) {
         const totalVotes = data[0].count + data[1].count
-        votesCountElement.innerHTML = `<progress id="file" max="${totalVotes}" value="${data[0].count}"></progress>`
+        votesCountElement.innerHTML = `<h1>Thanks for voting</h1><progress id="file" max="${totalVotes}" value="${data[0].count}"></progress>`
       }
     })
     .catch((error) => {
