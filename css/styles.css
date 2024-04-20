@@ -19,6 +19,7 @@ body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-p
   .container {
     display: flex;
     justify-content: center;
+    width: 100%;
     max-width: 1024px;
     margin: auto;
     background-image: url('../images/backfocus.jpeg'); /* Reemplaza 'tu-imagen.jpg' con la ruta de tu imagen */
@@ -83,7 +84,6 @@ body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-p
 
   .modalbutton { /* Estilos para el botón que abrirá el modal */
     display: block;
-    width: 200px;
     margin: 50px auto;
     padding: 10px;
     text-align: center;
@@ -216,29 +216,45 @@ ul {
   }
   
 
-  @media (max-width: 650px) {
+  @media (max-width: 600px) {
     /* Estilos para pantallas con un ancho máximo de 600px */
     .container{
-      width: 100%;
+      max-width: 317px;
       overflow: hidden;
-      background-position: -94px;
+      margin: 0;
     }
 
     .img-girl{
-      width:166px;
+      width:120px;
+      right:-8px;
+      top: 77px
     }
 
     .img-boy{
-      width: 166px;
+      width: 120px;
       left: -1px;
-      top: 34px;
+      top: 77px;
     }
 
     .countdown{
-      width: 200px;
+      width: 150px;
+      margin-left: 23px
     }
 
     .numero{
-    font-size: 2rem;
+    font-size: 1.4rem;
+    }
+
+    .survey h1{
+      font-size: 0.8em;
+    }
+    .btn-gender-boy, .btn-gender-girl{
+      font-size: 0.8em;
+    }
+    .btn-gender-girl{
+      margin-left: 40px;
+    }
+    .modalbutton{
+      font-size: 0.5em;
     }
 }
