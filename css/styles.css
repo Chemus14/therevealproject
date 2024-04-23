@@ -100,7 +100,6 @@ body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-p
     left: 0;
     top: 0;
     width: 100%;
-    height:fit-content;
     margin: 0 auto;
     background-color: rgba(0,0,0,0.9); /* Fondo oscuro semitransparente */
   }
