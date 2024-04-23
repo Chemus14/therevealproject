@@ -58,7 +58,7 @@ body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-p
   }
   .content{
     margin-top: 50px;
-    animation: changeOpacity 8s;
+    animation: changeOpacity 20s;
   }
 
   @keyframes changeOpacity {

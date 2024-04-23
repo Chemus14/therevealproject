@@ -66,18 +66,19 @@ window.addEventListener('click', function (event) {
     closeModal()
   }
 })
-
+const surveyEl = document.getElementById('survey')
 // Manejar el clic en el botón "Boy"
 document.getElementById('btn-gender-boy').addEventListener('click', () => {
   votar('Boy')
+  surveyEl.style.display = 'none'
 })
 
 // Manejar el clic en el botón "Girl"
 document.getElementById('btn-gender-girl').addEventListener('click', () => {
   votar('Girl')
+  surveyEl.style.display = 'none'
 })
 
-const surveyEl = document.getElementById('survey')
 // Función para enviar el voto al servidor
 function votar(opcion) {
   fetch('http://127.0.0.1:3000/votar', {
@@ -92,6 +93,8 @@ function votar(opcion) {
       if (!response.ok) {
         throw new Error('Error al enviar el voto')
       }
+      // Storing data
+      localStorage.setItem(`${opcion}`, 'votado')
 
       obtenerRecuentoVotos()
     })
@@ -119,6 +122,11 @@ function obtenerRecuentoVotos() {
       if (votesCountElement) {
         const totalVotes = data[0].count + data[1].count
         votesCountElement.innerHTML = `<h1>Thanks for voting</h1><progress id="file" max="${totalVotes}" value="${data[0].count}"></progress>`
+        // Check if localStorage has something stored for 'Boy' or 'Girl'
+        const boyVote = localStorage.getItem('Boy')
+        const girlVote = localStorage.getItem('Girl')
+
+        if (boyVote || girlVote) surveyEl.style.display = 'none'
       }
     })
     .catch((error) => {
