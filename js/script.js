@@ -69,67 +69,69 @@ window.addEventListener('click', function (event) {
 const surveyEl = document.getElementById('survey')
 // Manejar el clic en el botón "Boy"
 document.getElementById('btn-gender-boy').addEventListener('click', () => {
-  votar('Boy')
-  surveyEl.style.display = 'none'
+  // votar('Boy')
+  // surveyEl.style.display = 'none'
+  alert('No need of vote, we will love our baby no matter what!!')
 })
 
 // Manejar el clic en el botón "Girl"
 document.getElementById('btn-gender-girl').addEventListener('click', () => {
-  votar('Girl')
-  surveyEl.style.display = 'none'
+  // votar('Girl')
+  // surveyEl.style.display = 'none'
+  alert('No need of vote, we will love our baby no matter what!!')
 })
 
 // Función para enviar el voto al servidor
-function votar(opcion) {
-  fetch('http://127.0.0.1:3000/votar', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({ opcion })
-  })
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Error al enviar el voto')
-      }
-      // Storing data
-      localStorage.setItem(`${opcion}`, 'votado')
+// function votar(opcion) {
+//   fetch('http://127.0.0.1:3000/votar', {
+//     method: 'POST',
+//     headers: {
+//       'Content-Type': 'application/json'
+//     },
+//     body: JSON.stringify({ opcion })
+//   })
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error('Error al enviar el voto')
+//       }
+//       // Storing data
+//       localStorage.setItem(`${opcion}`, 'votado')
 
-      obtenerRecuentoVotos()
-    })
-    .catch((error) => {
-      console.error('Error:', error)
-      alert('Error al registrar el voto')
-    })
-}
+//       obtenerRecuentoVotos()
+//     })
+//     .catch((error) => {
+//       console.error('Error:', error)
+//       alert('Error al registrar el voto')
+//     })
+// }
 
 // Define una función para obtener y mostrar el recuento de votos
-function obtenerRecuentoVotos() {
-  // Obtener el recuento de votos
-  fetch('http://127.0.0.1:3000/votos')
-    .then((response) => {
-      if (!response.ok) {
-        throw new Error('Error al obtener el recuento de votos')
-      }
-      return response.json()
-    })
-    .then((data) => {
-      // Por ejemplo, si tienes un elemento con el id "votosCount", puedes actualizar su contenido
-      const votesCountElement = document.getElementById('votosCount')
-      if (votesCountElement) {
-        const totalVotes = data[0].count + data[1].count
-        votesCountElement.innerHTML = `<h1>Thanks for voting</h1><progress id="file" max="${totalVotes}" value="${data[0].count}"></progress>`
-        // Check if localStorage has something stored for 'Boy' or 'Girl'
-        const boyVote = localStorage.getItem('Boy')
-        const girlVote = localStorage.getItem('Girl')
+// function obtenerRecuentoVotos() {
+//   // Obtener el recuento de votos
+//   fetch('http://127.0.0.1:3000/votos')
+//     .then((response) => {
+//       if (!response.ok) {
+//         throw new Error('Error al obtener el recuento de votos')
+//       }
+//       return response.json()
+//     })
+//     .then((data) => {
+//       // Por ejemplo, si tienes un elemento con el id "votosCount", puedes actualizar su contenido
+//       const votesCountElement = document.getElementById('votosCount')
+//       if (votesCountElement) {
+//         const totalVotes = data[0].count + data[1].count
+//         votesCountElement.innerHTML = `<h1>Thanks for voting</h1><progress id="file" max="${totalVotes}" value="${data[0].count}"></progress>`
+//         // Check if localStorage has something stored for 'Boy' or 'Girl'
+//         const boyVote = localStorage.getItem('Boy')
+//         const girlVote = localStorage.getItem('Girl')
 
-        if (boyVote || girlVote) surveyEl.style.display = 'none'
-      }
-    })
-    .catch((error) => {
-      console.error('Error al obtener el recuento de votos:', error)
-    })
-}
+//         if (boyVote || girlVote) surveyEl.style.display = 'none'
+//       }
+//     })
+//     .catch((error) => {
+//       console.error('Error al obtener el recuento de votos:', error)
+//     })
+// }
 
-// Llamar a la función cuando la página se carga
-window.addEventListener('load', obtenerRecuentoVotos)
+// // Llamar a la función cuando la página se carga
+// window.addEventListener('load', obtenerRecuentoVotos)
