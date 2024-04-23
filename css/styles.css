@@ -260,6 +260,7 @@ progress {
   background-color: lightpink;
   /* Redondea los bordes del elemento */
   border-radius: 5px;
+  margin-left: 19px;
 }
 
 /* Estilo para la barra de progreso */
