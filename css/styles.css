@@ -263,6 +263,16 @@ progress {
   margin-left: 19px;
 }
 
+.address{
+  margin-bottom: 10px;
+  border: 3px dotted var(--russian-violet);
+  padding: 4px;
+}
+
+h2{
+  margin-bottom: 10px;
+}
+
 /* Estilo para la barra de progreso */
 progress::-webkit-progress-bar {
   /* Establece el color de fondo de la barra de progreso */
