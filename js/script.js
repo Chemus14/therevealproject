@@ -89,7 +89,6 @@ function votar(opcion) {
     body: JSON.stringify({ opcion })
   })
     .then((response) => {
-      console.log(response)
       if (!response.ok) {
         throw new Error('Error al enviar el voto')
       }
@@ -115,8 +114,6 @@ function obtenerRecuentoVotos() {
       return response.json()
     })
     .then((data) => {
-      // Aquí puedes manejar la respuesta, por ejemplo, mostrando el recuento de votos en algún elemento del DOM
-      console.log('Recuento de votos:', data)
       // Por ejemplo, si tienes un elemento con el id "votosCount", puedes actualizar su contenido
       const votesCountElement = document.getElementById('votosCount')
       if (votesCountElement) {

@@ -33,7 +33,7 @@ body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-p
     position:absolute;
     right: 6px;
     width: 244px;
-    animation:  changePositionGirl 8s;
+    animation:  changePositionGirl 6s;
     top: 215px;
   }
 
@@ -48,7 +48,7 @@ body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-p
     left: 3px;
     width: 244px;
     top: 201px;
-    animation:  changePositionBoy 8s;
+    animation:  changePositionBoy 6s;
   }
 
   @keyframes changePositionBoy{
@@ -58,19 +58,40 @@ body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-p
   }
   .content{
     margin-top: 50px;
-    animation: changeOpacity 20s;
+    animation: changeOpacity 6s;
   }
 
   @keyframes changeOpacity {
-    from { opacity: 0; }
-    to { opacity: 1; }
+    0% {
+      opacity: 0;
+    }
+    25% {
+      opacity: 0;
+    }
+    50% {
+      opacity: 0;
+    }
+    75% {
+      opacity: 0.3;
+    }
+    100% {
+      opacity: 1;
+    }
   }
   .countdown { /* Estilos para tu cuenta atrás */
     text-align: center;
     margin-bottom: 90px;
     border: 5px double var(--russian-violet);
-    width: 400px;
+    min-width: 400px;
+    font-size: 1.2em;
+    color: rgb(238, 0, 255);
+    background-color: rgba(255,255,255,0.3);
+    text-transform: uppercase;
+    font-weight: bolder;
+    text-shadow: var(--sky-blue) 2px 3px 5px;
+    padding: 0px 5px;
   }
+  
   /* Estilos para el modal */
 .modal {
     display: none; /* Ocultar el modal por defecto */
@@ -78,8 +99,10 @@ body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-p
     z-index: 1; /* Situar el modal por encima del resto del contenido */
     left: 0;
     top: 0;
+    width: 100%;
+    height:fit-content;
     margin: 0 auto;
-    background-color: rgba(0,0,0,0.4); /* Fondo oscuro semitransparente */
+    background-color: rgba(0,0,0,0.9); /* Fondo oscuro semitransparente */
   }
 
   .modalbutton { /* Estilos para el botón que abrirá el modal */
@@ -95,7 +118,8 @@ body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-p
     font-weight: bolder;
     font-size: 1.5rem;
     transition: all 0.4s ease;
-    margin-bottom: 150px
+    margin-bottom: 150px;
+    text-transform: uppercase;
   }
   .modalbutton:hover{
     background-color: var(--pale-purple);
@@ -105,10 +129,10 @@ body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-p
   /* Estilos para el contenido del modal */
   .modal-content {
     background-color: rgba(255,255,255,0.7);
-    margin: 0 auto; /* Centrar verticalmente */
+    margin: 50px auto; /* Centrar verticalmente */
     padding: 20px;
     border: 1px solid #888;
-    width: 100%; /* Anchura del modal */
+    width: 500px; /* Anchura del modal */
     border: 3px solid #aaa;
     border-radius: 12px;
     overflow: scroll;
@@ -175,9 +199,10 @@ body { margin: 0; font-family: Arial, sans-serif; background-color: var(--pale-p
 
   .numero{
     display: inline-block;
-    color: white;
+    color: var(--russian-violet);
     font-size: 4em;
     font-weight: bolder;
+    text-decoration:overline var(--russian-violet)
   }
 
   /* Estilos para la lista desordenada principal */
@@ -210,7 +235,6 @@ ul {
   
   /* Estilos adicionales para mejorar la apariencia */
   ul, li {
-    font-family: Arial, sans-serif; /* Tipo de fuente */
     font-size: 1em; /* Tamaño de fuente */
     color: var(--yinmn-blue); /* Color de texto */
     font-weight: bolder;
